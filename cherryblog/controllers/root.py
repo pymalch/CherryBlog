@@ -4,7 +4,6 @@ Created on:    Apr 18, 2014
 @author:        pymalch
 '''
 from cherrypy import expose, tools, request, HTTPRedirect
-from cherryblog.tools.sqlalchemy_tool import SATool
 from cherryblog.models import Post
 import cherrypy
 
@@ -47,7 +46,8 @@ class Root(object):
     def add(self, **kwargs):
 
         if kwargs['title'] == None or kwargs['content'] == None:
-            raise HTTPRedirect('/?message=Please Fill All Post Fields! ')
+            cherrypy.session['MESSAGE']= u"Please Fill All Post Fields!"
+            raise HTTPRedirect('/')
 
         blog = Post(title=kwargs['title'], content=kwargs['content'])
         request.db.add(blog)
