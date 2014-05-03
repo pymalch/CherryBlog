@@ -37,6 +37,10 @@ def start(config_files=None):
         'tools.mako.directories': [os.path.join(root_dir,'views')],
         'tools.staticdir.root':  root_dir,
         'tools.db.on'    : True,
+        'tools.sessions.on' : True,
+        'tools.sessions.storage_type' : 'ram',
+        #'tools.sessions.storage_path' : 'sessionsPath',
+        'tools.sessions.timeout' : 60 ,
        },'/public': {
         'tools.staticdir.on': True,
         'tools.staticdir.dir':  'public'

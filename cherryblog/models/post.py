@@ -20,6 +20,7 @@ from cherryblog.models import BaseModel
 from datetime import datetime
 from sqlalchemy.schema import Sequence
 
+
 class Post(BaseModel):
     __tablename__ = 'post'
     id = Column(Integer, Sequence('post_id_seq') ,primary_key=True)
