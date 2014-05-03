@@ -12,4 +12,12 @@ $(function(){
     $('#loginPanelButton').click(function(){
         $('.loginForm').slideToggle();
     });
+
+    $(document).click(function(e) {
+        if($(e.target).attr('id') == 'loginPanelButton')
+        return;
+    if (!$(e.target).closest('.loginForm').length) {
+        $('.loginForm').slideUp();
+    }
+});
 });

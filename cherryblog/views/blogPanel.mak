@@ -2,13 +2,15 @@
 	<section id="panel">
 		<form action="/add" method="post">
 			<h1>Add Post</h1>
-			<div>
+			<div class="row inpTitle">
+			<span class="before fa-flag fa"></span>
 				<input type="text" placeholder="Title" name="title" required="true" id="title" />
 			</div>
-			<div>
+			<div  class="row inpContent">
+			<span class="before fa-align-justify fa"></span>
 				<textarea placeholder="description ..." name="content"></textarea>
 			</div>
-			<div>
+			<div  class="row">
 				<input type="submit" value="Publish Blog" />
 
 			</div>
