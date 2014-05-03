@@ -9,9 +9,8 @@ import CherrypyElixir
 root_dir = os.path.abspath(os.path.dirname(__file__))
 
 __default_config = """
-db_uri: sqlite:///../data/cherryblog.db
+    db_uri: sqlite:///data/cherryblog.db
 """
-
 
 def start(config_files=None):
     global config
@@ -19,28 +18,21 @@ def start(config_files=None):
     # Preparing config
     config= ConfigManager(__default_config,files=config_files)
 
-
     # Setting up cherrypy tools
     CherrypyMako.setup()
-    from cherryblog.plugins.sqlalchemy_plugin import  SAEnginePlugin
-    from cherryblog.tools.sqlalchemy_tool import  SATool
-    SAEnginePlugin(cp.engine).subscribe()
-    cp.tools.db = SATool()
+    CherrypyElixir.setup()
 
     # Importing models and controllers
     from cherryblog.controllers import Root
     from cherryblog.models import Post
 
-
     # Configuring cherrypy
     cp_config = {'global': {
         'tools.mako.directories': [os.path.join(root_dir,'views')],
         'tools.staticdir.root':  root_dir,
-        'tools.db.on'    : True,
-        'tools.sessions.on' : True,
-        'tools.sessions.storage_type' : 'ram',
-        #'tools.sessions.storage_path' : 'sessionsPath',
-        'tools.sessions.timeout' : 60 ,
+        'engine.elixir.on'    : True,
+        'engine.elixir.echo'    : True,
+        'engine.elixir.db_uri'    : config.db_uri
        },'/public': {
         'tools.staticdir.on': True,
         'tools.staticdir.dir':  'public'

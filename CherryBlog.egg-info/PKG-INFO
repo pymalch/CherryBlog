@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: CherryBlog
+Version: 0.1.0
+Summary: Simplt blogging system using cherrypy
+Home-page: http://github.com/pylover/cherryblog
+Author: Vahid Mardani
+Author-email: vahid.mardani@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: any
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: Freeware
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technolog
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers

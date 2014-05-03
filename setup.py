@@ -15,8 +15,7 @@ dependencies = [
     'cherrypy>=3.2.5',
     'pymlconf>=0.3.10',
     'CherrypyMako>=0.3.1',
-    'SQLAlchemy>=0.7.8'
-
+    'CherrypyElixir>=0.5.1'
 ]
 
 def read(fname):

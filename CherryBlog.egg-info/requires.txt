@@ -1,0 +1,4 @@
+cherrypy>=3.2.5
+pymlconf>=0.3.10
+CherrypyMako>=0.3.1
+CherrypyElixir>=0.5.1
